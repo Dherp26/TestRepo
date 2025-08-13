@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: 'Dancing Script', cursive;
+}
+
+.warpper {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 204, 218, 0.9), rgba(255, 255, 255, 0.58)), url(image/bgrMail.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;  /* Added some padding for responsiveness */
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;  /* Ensuring it doesn't get too wide on larger screens */
+    height: auto;
+    background: rgba(253, 233, 234, 0.9);
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gifs_left, .gifs_right {
+    position: absolute;
+    width: 92px;
+}
+
+.gifs_left {
+    bottom: -25px;
+    left: -16px;
+}
+
+.gifs_right {
+    top: -54px;
+    right: -33px;
+}
+
+.gifs_left img, .gifs_right img {
+    width: 100%;
+}
+
+.mail {
+    width: 100%;
+    border: 2px dashed rgb(167, 32, 71);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.heart img {
+    position: absolute;
+    width: 50px;
+    transform: rotate(10deg);
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.content .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.content .title h2 {
+    font-size: 35px;
+    color: rgb(181, 12, 17);
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: 2s;
+    word-wrap: break-word;
+}
+
+.warpper:hover .title h2 {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.content p {
+    padding: 0px 45px;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 1s;
+    word-wrap: break-word; /* Ensure wrapping */
+    text-align: justify; /* Align text properly */
+}
+
+.warpper:hover .content p {
+    animation: text1 2s forwards ease-in-out;
+}
+
+@keyframes text1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    z-index: 100000000000;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+#copy {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+}
+
+#copy a {
+  text-decoration: none;
+  color: #191919d7;
+}
+
+#copy p {
+  color: #6a0c1a;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 658px) {
+    .box {
+        width: 100%;
+        max-width: 307px;
+        height: 432px;
+        background: rgba(253, 233, 234, 0.9);
+        border-radius: 5px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        padding: 24px;
+        align-items: center;
+    }
+
+    .gifs_left {
+        bottom: -16px;
+        left: -37px;
+    }
+
+    .gifs_right {
+        top: -34px;
+        right: -33px;
+    }
+
+    .mail {
+        width: 100%;
+        height: 407px;
+        border: 2px dashed rgb(167, 32, 71);
+        border-radius: 15px;
+    }
+
+    .content .title h2 {
+        font-size: 2rem;
+        color: rgb(181, 12, 17);
+        opacity: 0;
+        transform: translateY(-40px);
+        transition: 2s;
+    }
+
+    .warpper:hover .title h2 {
+        opacity: 1;
+        transform: translateY(1px);
+    }
+
+    .content p {
+        padding: 21px 40px;
+        font-size: 1rem;
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    .gifs_left {
+        bottom: -69px;
+        left: -37px;
+    }
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #ff69b4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.music-btn i {
+    font-size: 24px;
+    color: white;
+}
